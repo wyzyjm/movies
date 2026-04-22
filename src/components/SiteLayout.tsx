@@ -4,7 +4,6 @@ import {
   getSelectedNavKey,
   primaryNavItems,
   quickActions,
-  siteName,
   siteRecordNumber,
 } from '@/data/site';
 import { Breadcrumb, Button, Layout, Menu, Typography } from 'antd';
