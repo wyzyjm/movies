@@ -7,16 +7,16 @@ type AuthPageProps = {
 
 const copyByMode = {
   login: {
-    title: '登录账号',
-    subtitle: '登录后可同步收藏, 观影记录和个性化推荐.',
+    title: '登录页面',
+    subtitle: '参照课程要求设置账号登录表单, 通过首页和页头均可进入.',
     submitText: '立即登录',
     alternateText: '还没有账号',
     alternateLinkText: '去注册',
     alternatePath: '/register',
   },
   register: {
-    title: '创建账号',
-    subtitle: '注册后即可体验电影收藏, 订阅和榜单提醒能力.',
+    title: '注册页面',
+    subtitle: '参照课程要求设置用户注册表单, 与登录页形成完整的账号入口.',
     submitText: '完成注册',
     alternateText: '已经有账号',
     alternateLinkText: '去登录',
@@ -32,7 +32,7 @@ const AuthPage = ({ mode }: AuthPageProps) => {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(14,165,233,0.35),_transparent_42%),linear-gradient(135deg,_rgba(15,23,42,0.96),_rgba(2,6,23,1))]" />
       <Card className="relative z-10 w-full max-w-md border-0 shadow-2xl">
         <Space direction="vertical" size={8} className="mb-8 w-full">
-          <Typography.Text type="secondary">Movie Space</Typography.Text>
+          <Typography.Text type="secondary">Movie Study Demo</Typography.Text>
           <Typography.Title level={2} className="!mb-0">
             {copy.title}
           </Typography.Title>
@@ -67,13 +67,13 @@ const AuthPage = ({ mode }: AuthPageProps) => {
           ) : null}
 
           <div className="mb-6 flex items-center justify-between">
-            <Checkbox>{mode === 'login' ? '记住我' : '同意服务协议'}</Checkbox>
+            <Checkbox>{mode === 'login' ? '记住账号' : '同意网站使用说明'}</Checkbox>
             {mode === 'login' ? (
               <Link className="text-sm text-sky-600 transition hover:text-sky-500" to="/register">
                 快速注册
               </Link>
             ) : (
-              <Typography.Text type="secondary">注册后可在个人中心完善信息</Typography.Text>
+              <Typography.Text type="secondary">注册后可返回首页浏览全部栏目</Typography.Text>
             )}
           </div>
 

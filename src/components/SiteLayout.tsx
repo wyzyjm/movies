@@ -4,6 +4,7 @@ import {
   getSelectedNavKey,
   primaryNavItems,
   quickActions,
+  siteName,
   siteRecordNumber,
 } from '@/data/site';
 import { Breadcrumb, Button, Layout, Menu, Typography } from 'antd';
@@ -23,37 +24,43 @@ const SiteLayout = () => {
       <section
         className="relative overflow-hidden"
         style={{
-          backgroundImage: `linear-gradient(120deg, rgba(15, 23, 42, 0.94), rgba(3, 105, 161, 0.74)), url(${heroBanner})`,
+          backgroundImage: `linear-gradient(120deg, rgba(15, 23, 42, 0.92), rgba(3, 105, 161, 0.76)), url(${heroBanner})`,
           backgroundPosition: 'center',
           backgroundSize: 'cover',
         }}
       >
-        <div className="mx-auto flex min-h-80 max-w-7xl items-center px-6 py-16">
-          <div className="max-w-2xl">
-            <Typography.Title level={1} className="mb-4! mt-3! text-white!">
-              发现下一部值得收藏的电影
+        <div className="mx-auto flex min-h-[320px] max-w-7xl items-center px-6 py-16">
+          <div className="max-w-3xl">
+          
+            <Typography.Title level={1} className="!mb-4 !mt-3 !text-white">
+              电影欣赏网站课程综合实例
             </Typography.Title>
             <Typography.Paragraph className="!mb-6 !text-base !leading-8 !text-slate-200">
-              用首页统一承接 Banner, 导航, 面包屑和内容区域. 分类频道, 排行榜和账号页面已经接入同一套路由体系,
-              后续扩展内容时可以继续沿用现有结构.
+              网站围绕电影欣赏主题进行设计, 包含首页, 3 个栏目页, 电影排行榜页, 登录页, 注册页以及 9 个电影内容页面.
+              所有页面通过统一导航和面包屑组织为一个完整站点.
             </Typography.Paragraph>
             <div className="flex flex-wrap gap-3">
               <Button type="primary" size="large" onClick={() => navigate('/ranking')}>
-                查看排行榜
+                查看电影排行榜
               </Button>
               <Button size="large" ghost onClick={() => navigate('/register')}>
-                立即注册
+                进入注册页面
               </Button>
             </div>
           </div>
-        </div>
-        <div className="absolute right-1 top-1 flex items-center gap-3">
+
+          <div className="absolute right-3 top-3 flex items-center gap-3">
             {quickActions.map((item) => (
-              <Button key={item.key} type={item.key === 'register' ? 'primary' : 'default'} onClick={() => navigate(item.path)}>
+              <Button
+                key={item.key}
+                type={item.key === 'register' ? 'primary' : 'default'}
+                onClick={() => navigate(item.path)}
+              >
                 {item.label}
               </Button>
             ))}
           </div>
+        </div>
       </section>
 
       <Header className="sticky top-0 z-40 h-auto border-b border-slate-200/80 bg-white/95! px-0 shadow-sm backdrop-blur">

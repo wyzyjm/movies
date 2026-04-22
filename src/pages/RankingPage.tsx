@@ -1,6 +1,7 @@
 import { rankingMovies } from '@/data/site';
 import { Card, Table, Tag, Typography } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
+import { Link } from 'react-router-dom';
 
 type RankingRow = (typeof rankingMovies)[number];
 
@@ -9,16 +10,21 @@ const columns: ColumnsType<RankingRow> = [
     title: '排名',
     dataIndex: 'rank',
     key: 'rank',
-    width: 100,
+    width: 90,
     render: (rank: number) => <span className="font-semibold text-slate-900">#{rank}</span>,
   },
   {
     title: '电影名称',
     dataIndex: 'title',
     key: 'title',
+    render: (_value: string, record: RankingRow) => (
+      <Link className="font-semibold text-sky-700 transition hover:text-sky-500" to={`/movie/${record.movieId}`}>
+        {record.title}
+      </Link>
+    ),
   },
   {
-    title: '分类',
+    title: '栏目',
     dataIndex: 'genre',
     key: 'genre',
     render: (genre: string) => <Tag color="blue">{genre}</Tag>,
@@ -47,7 +53,7 @@ const RankingPage = () => {
       <Card className="border-0 shadow-sm">
         <Typography.Title level={2}>电影排行榜</Typography.Title>
         <Typography.Paragraph className="!mb-0 !text-base !leading-8 !text-slate-600">
-          使用 antd Table 实现排行榜表格, 并在全局样式中增加斑马纹效果. 当前数据为静态示例, 后续可直接替换成接口返回.
+          本页参照课程要求使用 antd Table 展示排行榜. 电影名称支持点击进入对应内容页, 表格使用斑马纹样式增强可读性.
         </Typography.Paragraph>
       </Card>
 

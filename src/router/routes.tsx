@@ -2,6 +2,7 @@ import AuthPage from '@/components/AuthPage';
 import SiteLayout from '@/components/SiteLayout';
 import CategoryPage from '@/pages/CategoryPage';
 import Home from '@/pages/Home';
+import MovieDetailPage from '@/pages/MovieDetailPage';
 import RankingPage from '@/pages/RankingPage';
 import type { RouteObject } from 'react-router-dom';
 
@@ -17,6 +18,10 @@ const routes: RouteObject[] = [
       {
         path: 'category/:slug',
         element: <CategoryPage />,
+      },
+      {
+        path: 'movie/:movieId',
+        element: <MovieDetailPage />,
       },
       {
         path: 'ranking',
