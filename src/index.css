@@ -1,1 +1,37 @@
 @import "tailwindcss";
+
+:root {
+  color: #0f172a;
+  background-color: #f1f5f9;
+  font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #f1f5f9;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.movie-ranking-table .ant-table-thead > tr > th {
+  background: #e2e8f0;
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.movie-ranking-table .ant-table-tbody > tr:nth-child(odd) > td {
+  background: #ffffff;
+}
+
+.movie-ranking-table .ant-table-tbody > tr:nth-child(even) > td {
+  background: #f8fafc;
+}
